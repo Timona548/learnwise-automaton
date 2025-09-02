@@ -1,14 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Hero from "@/components/Hero";
+import LoginPage from "@/components/LoginPage";
+import FacilitatorDashboard from "@/components/FacilitatorDashboard";
+import StudentDashboard from "@/components/StudentDashboard";
+
+type AppState = 'landing' | 'login' | 'facilitator' | 'student';
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const [currentView, setCurrentView] = useState<AppState>('landing');
+
+  const handleGetStarted = () => {
+    setCurrentView('login');
+  };
+
+  const handleLogin = (role: 'facilitator' | 'student') => {
+    setCurrentView(role);
+  };
+
+  const handleLogout = () => {
+    setCurrentView('landing');
+  };
+
+  if (currentView === 'login') {
+    return <LoginPage onLogin={handleLogin} />;
+  }
+
+  if (currentView === 'facilitator') {
+    return <FacilitatorDashboard onLogout={handleLogout} />;
+  }
+
+  if (currentView === 'student') {
+    return <StudentDashboard onLogout={handleLogout} />;
+  }
+
+  return <Hero onGetStarted={handleGetStarted} />;
 };
 
 export default Index;

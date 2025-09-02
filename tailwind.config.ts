@@ -52,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Education-specific colors
+				'edu-blue': 'hsl(var(--edu-blue))',
+				'edu-blue-light': 'hsl(var(--edu-blue-light))',
+				'edu-green': 'hsl(var(--edu-green))',
+				'edu-green-light': 'hsl(var(--edu-green-light))',
+				'edu-orange': 'hsl(var(--edu-orange))',
+				'edu-purple': 'hsl(var(--edu-purple))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +74,16 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-subtle': 'var(--gradient-subtle)',
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'medium': 'var(--shadow-medium)',
+				'strong': 'var(--shadow-strong)',
 			},
 			keyframes: {
 				'accordion-down': {
